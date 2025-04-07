@@ -12,14 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => MyAppState();
+      create: (context) => MyAppState(),
       child: MaterialApp(
         title: 'Namer App',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange)
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         ),
-        home.MyHomePage(),
+        home: MyHomePage(),
       ),
     );
   }
@@ -39,6 +39,14 @@ class MyHomePage extends StatelessWidget {
         children: [
           Text('A random idea:'),
           Text(appState.current.asLowerCase),
+
+          ElevatedButton(
+            onPressed: () {
+                print('button pressed!');
+            },
+            child: Text('Next'),
+          ),
+
         ],
       ),
     );
